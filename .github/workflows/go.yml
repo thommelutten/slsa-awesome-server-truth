@@ -22,10 +22,10 @@ jobs:
         go-version: 1.19
 
     - name: Build
-      run: go build -a -v -trimpath='true' -buildvcs='true' -buildmode='exe' -o slsa-awesome-server
+      run: go build -a -v -trimpath='true' -buildvcs='true' -buildmode='exe' -o output/
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
         name: slsa-awesome-server
-        path: .
+        path: output/
